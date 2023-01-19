@@ -43,12 +43,13 @@ public class DMP_Automation {
 		
 		//System.out.println(getStatus);
 		
-		if (getStatus=="Reboot triggered successfully") {
+		if (getStatus.contains("Reboot triggered successfully"))
+		{
 			
-			System.out.println("Test case passed");
+			System.out.println("Test case passed:Device Rebooted Successfully");
 			
 		}
-		//System.out.println(getStatus);
+		System.out.println(getStatus);
 	
 		
 		/*

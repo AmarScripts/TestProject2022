@@ -2,11 +2,13 @@ package test;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class Waits {
 
@@ -20,12 +22,15 @@ public class Waits {
 				
 				//Open a Webpage
 				driver.get("https://google.com");
+				driver.findElement(By.name("q")).sendKeys("Automation Step by Step"+ Keys.ENTER);
 				
-			
-				Thread.sleep(4000);
-				driver.close();
-				driver.quit();
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+				
+				Thread.sleep(5000);
+				
+				//driver.close();
+				//driver.quit();
 	
 	}
-
 }
+
